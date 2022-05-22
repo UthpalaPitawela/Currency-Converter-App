@@ -14,6 +14,8 @@ This project consists of the below functionalities
 
 ## Non Functional Requirements
 - Usability: Error handling
+- Performance and Security: Rate limiting
+- Logging
 
 ## How to Install
 
@@ -36,8 +38,13 @@ This project has a client  and a server where you need to run both as follows.
 - Type yarn to install dependencies
 - Run yarn install to run the client
 
-When running server a valid API key should be added to the .env file when accessing exchange rate API from https://fixer.io
+### Environment Variables
+
+- Create a .env file similar to env.example in the server directory 
+- Create a valid API key from https://fixer.io and add to the FIXER_API_KEY in the .env file
  
+### Login credentials
+
 Use the below credential to log into the system
 - email: user@test.com
 - password: test1234
@@ -54,10 +61,14 @@ Used API libraries:
  - https://restcountries.com  : To obtain country information
  - https://fixer.io :  To obtain exchange rate information
 
-## How authentication handled:
+## How authentication handled
 
 A user will be authenticated via JWT token
 
+## How rate limiting handled
 
+For the rate limit graphql-rate-limit-directive has been utilized. https://www.npmjs.com/package/graphql-rate-limit-directive?activeTab=readme
 
+## Logging
 
+Log4js library is used to handle logging https://www.npmjs.com/package/log4js
