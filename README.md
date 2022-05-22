@@ -53,7 +53,7 @@ Use the below credential to log into the system
 
 ## Technical Overview
 
-The client application is made up from React and it's version is 18.1.0. React functional components are used for this application along with React hooks. The apollo client is used to manage graphql from the client side. Semantic UI is used as the UI library for the application. For the login, Semantic UI has been directly utilized. 
+The client application is made up from React and it's version is 18.1.0. React functional components are used for this application along with React hooks. The apollo client is used to manage graphql from the client side. Semantic UI is used as the UI library for the application. For the login, Semantic UI has been directly utilized. Essential application state data are persisted using local storage.
 
 Server is made up using Node and Apollo-server to handle graphql queries from server end. Axios is used to handle API endpoints.
 
