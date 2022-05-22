@@ -1,6 +1,10 @@
 const RateLimit = {
-    LIMIT: "30",
+    LIMIT: "3",
     DURATION: "60"
 }
 
-module.exports = {RateLimit}
+const SecretKey = {
+    KEY: "12345"
+}
+
+module.exports = {RateLimit, SecretKey}

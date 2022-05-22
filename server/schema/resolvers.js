@@ -3,9 +3,9 @@ const axios = require("axios");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const log4js = require("log4js");
-const { userCrendentials, salt } = require("./../authentication/credentials");
 const FIXER_API_KEY = process.env.FIXER_API_KEY;
-const SECRET = process.env.SECRET;
+const { userCrendentials, salt } = require("./../authentication/credentials");
+const { SecretKey } = require("./../constants/constants")
 
 log4js.configure({
   appenders: { fileAppender: { type: "file", filename: "application.log" },
@@ -97,7 +97,7 @@ const resolvers = {
             bcrypt.hashSync(password, salt) === creds.password
         );
         if (isAValidaUser) {
-          return { token: jwt.sign(email, SECRET) };
+          return { token: jwt.sign(email, SecretKey.KEY) };
         } else {
           return { token: "" };
         }
